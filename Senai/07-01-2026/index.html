@@ -1,242 +1,305 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drive-Thru de Oração - PIBS</title>
-    <link rel="icon" type="image/png" href="Logo Simples.png">
-    <style>
-        :root {
-            --primary-color: #1a365d; 
-            --secondary-color: #2b6cb0; 
-            --accent-color: #e53e3e; 
-            --bg-light: #f7fafc;
-            --text-dark: #2d3748;
-            --text-light: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive-Thru de Oração - IGS</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <!-- Favicon em fonte open-source via URL pública -->
+  <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1544427928-c49cddeb8b92?w=32&h=32&fit=crop">
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+  <!-- ============================================
+       ESTILOS (CSS) - Drive-Thru de Oração
+       ============================================ -->
+  <style>
+    /* Variáveis CSS para padronizar cores e facilitar mudanças futuras */
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2b6cb0;
+      --accent-color: #e53e3e;
+      --bg-light: #f7fafc;
+      --text-dark: #2d3748;
+      --text-light: #ffffff;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .background-maps {
-            background-color: #cbd5e0;
-            border: 2px dashed #718096;
-            color: #4a5568;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 8px;
-            min-height: 200px;
-            margin: 15px 0;
-        }
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    /* Container centraliza o conteúdo */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Caixa do mapa (visual placeholder) */
+    .background-maps {
+      background-color: #cbd5e0;
+      border: 2px dashed #718096;
+      color: #4a5568;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+      min-height: 200px;
+      margin: 15px 0;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+    /* Header fixo no topo */
+    header {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('SUA_IMAGEM_DE_FUNDO_AQUI.jpg') no-repeat center center/cover;
-            background-color: var(--primary-color); 
-            color: var(--text-light);
-            text-align: center;
-            padding: 80px 20px;
-        }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+    /* Logo e marca */
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
+    /* Banner principal */
+    .hero {
+      /* Background com gradiente + imagem open-source */
+      background:
+        linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)),
+        url('https://unsplash.com/pt-br/fotografias/compradora-satisfeita-e-sorridente-sentada-em-seu-carro-novo-ela-esta-sorrindo-olhando-para-o-vendedor-atraves-da-janela-aberta-enquanto-pega-as-chaves-do-carro-dele-Nso8AYRFivM') no-repeat center center/cover;
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--text-light);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-        .btn:hover {
-            background-color: #c53030;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+    }
 
-        .about {
-            padding: 60px 0;
-            background-color: #ffffff;
-        }
+    /* Botão CTA */
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--text-light);
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+    .btn:hover {
+      background-color: #c53030;
+    }
 
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 { font-size: 2rem; }
-        }
+    /* Seção “Sobre” */
+    .about {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
 
-        .details {
-            padding: 60px 0;
-            background-color: #edf2f7;
-            text-align: center;
-        }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
 
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
 
-        .card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
+    /* Seção de detalhes (quando/onde) */
+    .details {
+      padding: 60px 0;
+      background-color: #edf2f7;
+      text-align: center;
+    }
 
-        .location {
-            padding: 60px 0;
-            text-align: center;
-            background-color: #ffffff;
-        }
+    /* Grid dos cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
 
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
-    </style>
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    /* Seção de chegada */
+    .location {
+      padding: 60px 0;
+      text-align: center;
+      background-color: #ffffff;
+    }
+  </style>
 </head>
+
 <body>
-    
-    <header>
-        <div class="container nav-container">
-            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="Logo Simples.png" alt="Logo PIBS" style="height: 50px; width: auto;">
-                <span>PIBS</span>
-            </div>
-            <div style="font-size: 0.9rem; opacity: 0.9; text-align: right;">Primeira Igreja Batista em Sambaetiba</div>
-        </div>
-    </header>
+  <!-- =========================
+       HEADER / NAVEGAÇÃO
+       ========================= -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+        <!-- Logo (Imagem open-source via Unsplash) -->
+        <img
+          src="https://images.unsplash.com/photo-1544427928-c49cddeb8b92?w=100&h=100&fit=crop&q=80"
+          alt="Logo IGS"
+          style="height: 45px; width: 45px; border-radius: 50%; object-fit: cover;"
+        >
+        <span>IGS</span>
+      </div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Drive-Thru de Oração</h1>
-            <a href="#detalhes" class="btn">Ver Horários e Local</a>
-        </div>
-    </section>
+      <div style="font-size: 0.9rem; opacity: 0.9; text-align: right;">
+        Igreja do Senhor
+      </div>
+    </div>
+  </header>
 
-    <section class="about">
-        <div class="container about-grid">
-            <div>
-                <h2>O que é o Drive-Thru de Oração?</h2>
-                <br>
-                <p>Sabemos que os dias atuais exigem cuidado, mas a nossa fé permanece inabalável. O Drive-Thru de Oração da PIBS é uma oportunidade para você e sua família receberem apoio espiritual de forma segura.</p>
-                <br>
-                <p>Nossa equipe pastoral e de intercessão estará posicionada na entrada da igreja para clamar pela sua vida, saúde, família e projetos. Você não precisa descer do veículo, basta passar pelo nosso circuito e receber a sua bênção.</p>
-            </div>
-            <div>
-                <img src="drivetrhu.png" alt="Drive Thru Oração" style="width:100%; border-radius:8px;">
-            </div>
-        </div>
-    </section>
+  <!-- =========================
+       HERO
+       ========================= -->
+  <section class="hero">
+    <div class="container">
+      <h1>Drive-Thru de Oração</h1>
+      <p>Um momento de clamor, fé e comunhão sem precisar sair do seu carro.</p>
+      <a href="#detalhes" class="btn">Ver Horários e Local</a>
+    </div>
+  </section>
 
-    <section id="detalhes" class="details">
-        <div class="container">
-            <h2>Quando e Onde?</h2>
-            <p>Programe-se e não fique de fora desse momento especial.</p>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>📅 Data</h3>
-                    <p><strong>18/07</strong></p>
-                </div>
-                <div class="card">
-                    <h3>⏰ Horário</h3>
-                    <p><strong>Das 08h às 14h</strong></p>
-                </div>
-                <div class="card">
-                    <h3>📍 Local</h3>
-                    <p><strong>Av. Carlos Alerto Mendonça, 510, Sambaetiba, Itaboraí - RJ</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- =========================
+       SOBRE
+       ========================= -->
+  <section class="about">
+    <div class="container about-grid">
+      <div>
+        <h2>O que é o Drive-Thru de Oração?</h2>
+        <br>
+        O Drive-Thru de Oração da IGS
+        <br>
+        na entrada do nosso templo
+      </div>
 
-    <section class="location">
-        <div class="container">
-            <h2>Como Chegar</h2>
-            <br>
-            <p>Estaremos esperando por você na entrada principal da igreja.</p>
-            <br>
-            <div class="background-maps" style="height: 350px; max-width: 800px; margin: 0 auto;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920.313393293515!2d-42.780472730368835!3d-22.681602461326865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99c42ec36cc853%3A0x7064b6e0d0920c4!2sAv.%20Carlos%20Alberto%20Mendon%C3%A7a%2C%20510%20-%20Sambaetiba%2C%20Itabora%C3%AD%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1782948630529!5m2!1spt-BR!2sbr" width="100%" height="345" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-        </div>
-    </section>
+      <div>
+        <!-- Imagem open-source representativa -->
+        <img
+          src="https://images.unsplash.com/photo-1445445290350-18a3b86e0b5b?w=600&fit=crop"
+          alt="Drive Thru Oração IGS"
+          style="width:100%; border-radius:8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"
+        >
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Primeira Igreja Batista em Sambaetiba - PIBS. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">PIBS – Uma família para pertencer.</p>
-        </div>
-    </footer>
+  <!-- =========================
+       DETALHES (DATA/HORÁRIO/LOCAL)
+       ========================= -->
+  <section id="detalhes" class="details">
+    <div class="container">
+      <h2>Quando e Onde?</h2>
+      <p>Programe-se com a IGS</p>
 
+      <div class="cards-grid">
+        <div class="card">
+          <h3>📅 Data</h3>
+          <p><strong>18/07</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>⏰ Horário</h3>
+          <p><strong>Das 08h às 14h</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>📍 Local</h3>
+          <p><strong>Igreja do Senhor</strong></p>
+          <p style="font-size: 0.9rem; color: #4a5568; margin-top: 5px;">
+            Rodovia BR-101, s/n, em Manilha, Itaboraí - RJ
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       COMO CHEGAR
+       ========================= -->
+  <section class="location">
+    <div class="container">
+      <h2>Como Chegar</h2>
+      <br>
+      <p>Estaremos esperando por você e sua família na entrada principal da PIBS.</p>
+      <br>
+
+      <div class="background-maps" style="height: 350px; max-width: 800px; margin: 0 auto;">
+        <!-- Mapa do Google Maps centralizado no endereço -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.7026152216415!2d-42.92553163034979!3d-22.772410262144085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9995c8f69843af%3A0x1cb570620b1b15db!2sR.%20Valdelino%20Vital%2C%2027%20-%20Cond.%20Jos%C3%A9%20de%20Ancheita%203%2C%20Itabora%C3%AD%20-%20RJ%2C%2024855-068!5e0!3m2!1spt-BR!2sbr!4v1783032248779!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="345"
+          style="border:0; border-radius:8px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Igreja do Senhor - IGS. Todos os direitos reservados.</p>
+      <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">IGS – Uma igreja de Deus.</p>
+    </div>
+  </footer>
 </body>
 </html>
