@@ -1,0 +1,47 @@
+<!-- =========================================================
+	Agendamento.html
+	- Formulário odontológico (HTML estático)
+	- Sem backend: apenas coleta campos em inputs/checkboxes
+========================================================= -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Clínica Alceu de Dentinho</title>
+	</head>
+
+	<body>
+		<h1>Formulário Odondológico</h1>
+		<p>Doutor Drauzio Vraunelas - Cirurgião Dentista - CRO 00000</p>
+
+		<!-- Formulário estático: sem action/método definido -->
+		<form>
+			<!-- Identificação do paciente -->
+			Nome: <input type="text" id="^nome"><br><br>
+			Data de Nascimento: <input type="text" id="data"><br><br>
+			Estado Civil: <input type="text" id="estado_civil"><br><br>
+			Tel. Residencial: <input type="text" id="tel_resid"><br><br>
+			Cel: <input type="text" id="cel"><br><br>
+			E-mail: <input type="text" id="email"><br><br>
+			Endereço: <input type="text" id="end"><br><br>
+			Convênio: <input type="text" id="conv"><br><br>
+
+			<!-- Indicação do paciente -->
+			Indicação <input type="checkbox" id="indicN">Não<input type="checkbox" id="indicS">Sim <input type="text" id="indicador"><br><br>
+
+			<!-- Alergias -->
+			<strong> Alergia: </strong> <br>
+			Antibiotico <input type="checkbox" id="antibiotico"><br>
+			Anestésico <input type="checkbox" id="anestesico"><br>
+			Qual(ais): <input type="text" id="qAlergia"><br>
+
+			<!-- Sensibilidade / medicamentos -->
+			Sensibilidade a algum medicamento? <input type="checkbox" id="sensN">Não <input type="checkbox" id="sensS">Sim <input type="text" id="qSens"><br>
+			Está tomando algum medicamento? <input type="checkbox" id="medN">Não <input type="checkbox" id="medS">Sim <input type="text" id="qMed"><br>
+			Tem algum problema de saúde? <input type="checkbox" id="saudeN">Não <input type="checkbox" id="saudeS">Sim <input type="text" id="qSaude"><br><br>
+
+			<!-- Observações finais -->
+			<strong>Observações:</strong> <input type="text" style="width: 400px;" id="obs"><br>
+		</form>
+	</body>
+</html>
+

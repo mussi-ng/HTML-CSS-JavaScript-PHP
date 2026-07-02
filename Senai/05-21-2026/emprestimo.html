@@ -1,0 +1,132 @@
+<!-- =========================================================
+	empresimo.html (Banco Master)
+	- Formulário de solicitação de empréstimo (HTML estático)
+	- Usa elementos de formulário (inputs, radios, checkboxes)
+========================================================= -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Solicitação de Empréstimo - Banco Master</title>
+		<meta name="description" content="Formulário de solicitação de empréstimo pessoal.">
+	</head>
+
+	<body bgcolor="#00CED1" text="#000000" link="#0000CC" vlink="#800080" alink="#FF0000">
+		<p align="center">
+			<!-- Imagem/Logotipo (imagem vazia no original) -->
+			<img src="" alt="Logotipo do Banco Master" width="600" height="200">
+		</p>
+
+		<h1 align="center">Formulário de Solicitação de Empréstimo</h1>
+		<hr>
+
+		<p align="justify">
+			Preencha o formulário abaixo para solicitar um empréstimo. 
+			Todos os campos são de preenchimento obrigatório, 
+			exceto quando indicado. Após envio, 
+			nossa equipe entrará em contato no horário especificado.
+		</p>
+
+		<!-- Formulário principal -->
+		<form action="#" method="get" autocomplete="on">
+			<table border="1" align="center" bgcolor="#00CED1" cellpadding="5" cellspacing="2">
+				<caption><b>Dados Pessoais e Preferências</b></caption>
+
+				<!-- Campo: Nome -->
+				<tr>
+					<td align="rigth"><label for="nome"><b>Nome Completo:</b></label></td>
+					<td align="left">
+						<input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required maxlength="100" size="40">
+					</td>
+				</tr>
+
+				<!-- Campo: Data de Nascimento -->
+				<tr>
+					<td align="rigth"><label for="data_nasc"><b>Data de Nascimento</b></label></td>
+					<td align="left">
+						<input type="date" name="data_nasc" id="data_nasc" required>
+					</td>
+				</tr>
+
+				<!-- Campo: Horário para Contato -->
+				<tr>
+					<td align="rigth"><label for="hora_contato"><b>Melhor Horario para Contato:</b></label></td>
+					<td align="left">
+						<input type="time" name="hora_contato" id="hora_contato" required value="09:00">
+					</td>
+				</tr>
+
+				<!-- Tipo de Empréstimo (Radios) -->
+				<tr>
+					<td align="rigth" valign="top"><b>Tipo de Empréstimo</b></td>
+					<td align="left">
+						<input type="radio" name="tipo_emprestimo" id="pessoal" value="pessoal" checked>
+						<label for="pessoal">Pessoal</label><br>
+
+						<input type="radio" name="tipo_emprestimo" id="consignado" value="consignado">
+						<label for="consignado">Consignado</label><br>
+
+						<input type="radio" name="tipo_emprestimo" id="imobiliario" value="imobiliario">
+						<label for="imobiliario">Imobiliário</label><br>
+
+						<input type="radio" name="tipo_emprestimo" id="veiculo" value="veiculo">
+						<label for="veiculo">Veículo</label>
+					</td>
+				</tr>
+
+				<!-- Documentos (Checkboxes) -->
+				<tr>
+					<td align="rigth" valign="top"><b>Documentos que Você ja Possui:</b></td>
+					<td align="left">
+						<input type="checkbox" name="documentos" id="doc_rg" value="rg" checked>
+						<label for="doc_rg">RG (Carteira de Identidade )</label><br>
+
+						<input type="checkbox" name="documentos" id="doc_cpf" value="cpf">
+						<label for="doc_cpf">CPF</label><br>
+
+						<input type="checkbox" name="documentos" id="doc_comprovante_renda" value="comprovante_renda">
+						<label for="doc_comprovante_renda">Comprovante de Renda</label><br>
+
+						<input type="checkbox" name="documentos" id="doc_comprovante_residencia" value="comprovante_residencia">
+						<label for="doc_comprovante_residencia">Comprovante de Residência</label>
+					</td>
+				</tr>
+
+				<!-- Botões de enviar/limpar -->
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Solicitar Empréstimo">
+						&nbsp; &nbsp;
+						<input type="reset" value="Limpar Formulário">
+					</td>
+				</tr>
+			</table>
+
+			<p align="center">
+				<font color="#003366"><i>Após envio, você receberá uma confirmação no e-mail cadastrado.</i></font>
+			</p>
+
+			<p align="justify">
+				<font size="2" color="#333333">
+					<b>Termos de Uso:</b>
+					Ao enviar este formulário, você concorda com a análise de crédito e com o compartilhamento das informações fornecidas com parceiros financeiros.
+					Seus dados serão tratados de acordo com a Lei Geral de Proteção de Dados (LGPD).
+				</font>
+			</p>
+		</form>
+
+		<hr>
+
+		<p align="center">
+			Banco Master S.A - CNPJ: 00.000.000/0001-00 <br>
+			Central de Atendimento: 4002-8922 | E-mail: contato@bancomaster.com.br <br>
+			Endereço: Rua das Falências, 67 - Vale do Estrupício/RJ
+		</p>
+
+		<p align="center">
+			<font size="1" color="#666666">Desenvolvido por: Carlos Eduardo</font>
+		</p>
+	</body>
+</html>
+

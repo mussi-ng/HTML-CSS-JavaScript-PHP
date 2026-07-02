@@ -1,0 +1,61 @@
+<!-- =========================================================
+	contato.html
+	- Página de contato com formulário (HTML)
+	- Utiliza firstsite.css como estilo
+========================================================= -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Contato</title>
+		<link rel="stylesheet" href="firstsite.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>Bem Vindo!</h1>
+			<p>Utilizamos hoje a combinação de HTML 5 com o CSS 3.</p>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="firstysite.html">Inicio</a></li>
+				<li><a href="sobre.html">Sobre</a></li>
+				<li><a href="contato.html">Contato</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section class="contato">
+				<h2>Fale Conosco</h2>
+				<p>Preencha o formulário abaixo para enviar uma mensagem.</p>
+
+				<!-- Formulário (sem backend; action estático) -->
+				<form action="#" method="POST">
+					<div class="campo">
+						<label for="nome">Nome:</label>
+						<input type="text" id="nome" name="nome" required>
+					</div><br>
+
+					<div class="campo">
+						<label for="email">E-mail:</label>
+						<input type="email" id="email" name="email" required>
+					</div><br>
+
+					<div class="campo">
+						<label for="mensagem">Mensagem:</label>
+						<textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+					</div><br>
+
+					<button type="submit">Enviar Mensagem</button><br>
+
+					<footer>
+						<p>&copy; 2026 - Código de Aprendizado</p>
+					</footer>
+				</form>
+			</section>
+		</main>
+	</body>
+</html>
+

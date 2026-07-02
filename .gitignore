@@ -1,0 +1,29 @@
+# =====================
+# Dependências / caches
+# =====================
+node_modules/
+*.log
+*.tmp
+*.swp
+*.swo
+
+# =====================
+# Ambientes
+# =====================
+.env
+.env.*
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# =====================
+# Publicação / Build
+# =====================
+dist/
+build/
+

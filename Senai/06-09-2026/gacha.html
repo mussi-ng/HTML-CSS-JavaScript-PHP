@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slot Game Simples</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: #2c3e50;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .game-container{
+                background-color: #34495e;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+                text-align: center;
+            }
+            h1{
+                margin-top: 0;
+                color: #f1c40f;
+            }
+            .slot-machine{
+                display: flex;
+                gap: 15px;
+                margin: 20px 0;
+                justify-content: center;
+            }
+            .slot{
+                width: 80px;
+                height: 80px;
+                background-color: #ecf0f1;
+                border: 3px solid #bdc3c7;
+                border-radius: 10px;
+                font-size: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #2c3e50;
+            }
+            button{
+                background-color: #e74c3c;
+                color: white;
+                border: none;
+                padding: 15px 40px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover{
+                background-color: #c0392b;
+            }
+            #message{
+                margin-top: 20px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                min-height: 30px;
+            }
+            .win{
+                color: #2ecc71;
+            }
+            .lose{
+                color: #e74c3c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="game-container">
+            <h1>Sorte na Web🎰</h1>
+            <div class="slot-machine">
+                <div class="slot" id="slot1">🍒</div>
+                <div class="slot" id="slot2">🍒</div>
+                <div class="slot" id="slot3">🍒</div>
+            </div>
+            <button onclick="spin()">GIRAR</button>
+            <div id="message">Pressione GIRAR para jogar!</div>
+        </div>
+        <script>
+            const symbols = ['🍒','🍋','🍉','💎','🔔'];
+            function getRandomSymbol(){
+                const randomIndex = Math.floor(Math.random() * symbols.length);
+                return symbols[randomIndex];
+            }
+            function spin(){
+                const slot1 = document.getElementById('slot1');
+                const slot2 = document.getElementById('slot2');
+                const slot3 = document.getElementById('slot3');
+                const message = document.getElementById('message');
+
+                const result1 = getRandomSymbol();
+                const result2 = getRandomSymbol();
+                const result3 = getRandomSymbol();
+
+                slot1.textContent = result1;
+                slot2.textContent = result2;
+                slot3.textContent = result3;
+
+                if(result1 === result2 && result2 === result3){
+                    message.textContent = '🎉 PARABENS! VOCE GANHOU! 🎉';
+                    message.className = 'win';
+                }else{
+                    message.textContent = 'Que pena, tente novamente!';
+                    message.className = 'lose';
+                }
+            }
+        </script>
+    </body>
+</html>

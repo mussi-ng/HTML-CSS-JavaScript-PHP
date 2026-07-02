@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memoria Emoji</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+        }
+        h1{
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .memory-game{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            perspective: 1000px;
+        }
+        .memory-card{
+            width: calc(25% - 10px);
+            height: calc(25% - 10px);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            cursor: pointer;
+        }
+        .memory-card:active{
+            transform: scale(0.95);
+            transition: transform 0.2s;
+        }
+        .memory-card.flip{
+            transform: rotateY(180deg);
+        }
+        .front-face, .back-face{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 12px;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .front-face{
+            transform: rotateY(180deg);
+            background: #ffffff;
+        }
+        .back-face{
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #333;
+        }
+        .controls{
+            margin-top: 30px;
+        }
+        button{
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff9a9e;
+            color: #1e3c72;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        button:hover{
+            background-color: #ff758c;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 450px){
+            .memory-game{
+                width: 320px;
+                height: 320px;
+            }
+            .front-face, .back-face {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+    <body>
+        <h1>Jogo da Memoria 🚀</h1>
+        <div class="memory-game" id="game-board"></div>
+        <div class="controls">
+            <button onclick="resetGame()">Reiniciar Jogo</button>
+        </div>
+        <script>
+            const cardArray = ['🚀','🚀','🛸','🛸','🌍','🌍','⭐','⭐','🌠','🌠','🌙','🌙','☀','☀','👽','👽'];
+            const board = document.getElementById('game-board');
+            let hasFlippedCard = false;
+            let lockBoard = false;
+            let firstCard, secondCard;
+            function shuffle(array){
+                array.sort(()=>0.5 - Math.random());
+            }
+            function createBoard(){
+                board.innerHTML='';
+                shuffle(cardArray);
+                cardArray.forEach(emoji=>{
+                const card = document.createElement('div');
+                card.classList.add('memory-card');
+                card.dataset.emoji = emoji;
+                card.innerHTML =`
+                    <div class= "front-face">${emoji}</div>
+                    <div class= "back-face"> ❓</div>
+                `;
+                card.addEventListener('click', flipCard);
+                board.appendChild(card);
+                });
+            }
+            function flipCard(){
+                if(lockBoard) return;
+                if(this===firstCard) return;
+                this.classList.add('flip');
+                if(!hasFlippedCard){
+                    hasFlippedCard = true;
+                    firstCard = this;
+                    return;
+                }
+                secondCard = this;
+                checkForMatch();
+            }
+            function checkForMatch(){
+                let isMatch = firstCard.dataset.emoji === secondCard.dataset.emoji;
+                isMatch ? disableCards() : unflipCards();
+            }
+            function disableCards(){
+                firstCard.removeEventListener('click', flipCard);
+                secondCard.removeEventListener('click', flipCard);
+                resetBoard();
+            }
+            function unflipCards(){
+                lockBoard = true;
+                setTimeout(()=>{
+                    firstCard.classList.remove('flip');
+                    secondCard.classList.remove('flip');
+                    resetBoard();
+                }, 1000);
+            }
+            function resetBoard(){
+                [hasFlippedCard, lockBoard] = [false, false]
+                [firstCard, secondCard] = [null, null];
+            }
+            function resetGame(){
+                createBoard();
+            }
+            createBoard();
+        </script>
+    </body>
+</html>
