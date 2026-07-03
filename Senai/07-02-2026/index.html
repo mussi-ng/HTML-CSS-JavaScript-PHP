@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>News Today</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			/*
+				RESET BÁSICO:
+				- zera margem e padding para reduzir diferenças entre navegadores;
+				- box-sizing: border-box facilita cálculos de largura/altura (padding e border contam dentro do tamanho).
+			*/
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+
+			/*
+				BODY:
+				- define a tipografia (Poppins);
+				- define cores base do layout (fundo e texto).
+			*/
+			body {
+				font-family: 'Poppins', sans-serif;
+				background: #f4f6f9;
+				color: #222;
+			}
+
+
+			header {
+				background: #111827;
+				color: white;
+				padding: 25px 10%;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.logo {
+				font-size: 2.5rem;
+				font-weight: 800;
+				letter-spacing: 2px;
+			}
+
+			.subtitle {
+				color: #9ca3af;
+				margin-top: 5px;
+			}
+
+			nav {
+				margin-top: 20px;
+			}
+
+			nav a {
+				color: white;
+				text-decoration: none;
+				margin-right: 25px;
+				font-weight: 500;
+				transition: 0.3s;
+			}
+
+			nav a:hover {
+				color: #60a5fa;
+			}
+
+			.hero {
+				max-width: 1400px;
+				margin: auto;
+				background: white;
+			}
+
+			.hero img {
+				width: 100%;
+				height: 550px;
+				object-fit: cover;
+			}
+
+			.hero-content {
+				padding: 40px;
+			}
+
+			.badge {
+				display: inline-block;
+				background: #2563eb;
+				color: white;
+				padding: 8px 15px;
+				border-radius: 30px;
+				font-size: 0.9rem;
+				margin-bottom: 15px;
+			}
+
+			.hero h1 {
+				font-size: 3rem;
+				margin-bottom: 20px;
+			}
+
+			.hero p {
+				color: #555;
+				line-height: 1.8;
+				font-size: 1.1rem;
+			}
+
+			.container {
+				max-width: 1400px;
+				margin: auto;
+				padding: 40px;
+			}
+
+			.section-title {
+				font-size: 2rem;
+				margin-bottom: 25px;
+			}
+
+			.news-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 30px;
+			}
+
+			.card {
+				background: white;
+				border-radius: 18px;
+				overflow: hidden;
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+				transition: 0.3s;
+			}
+
+			.card:hover {
+				transform: translateY(-5px);
+			}
+
+			.card img {
+				width: 100%;
+				height: 240px;
+				object-fit: cover;
+			}
+
+			.card-content {
+				padding: 25px;
+			}
+
+			.card h3 {
+				margin-bottom: 15px;
+				font-size: 1.4rem;
+			}
+
+			.card p {
+				color: #666;
+				line-height: 1.7;
+			}
+
+			.latest {
+				margin-top: 50px;
+				background: white;
+				padding: 30px;
+				border-radius: 18px;
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+			}
+
+			.latest ul {
+				list-style: none;
+			}
+
+			.latest li {
+				padding: 15px 0;
+				border-bottom: 1px solid #eee;
+			}
+
+			.latest li:last-child {
+				border: none;
+			}
+
+			footer {
+				background: #111827;
+				color: white;
+				text-align: center;
+				padding: 30px;
+				margin-top: 60px;
+			}
+
+			footer p {
+				color: #9ca3af;
+			}
+
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2rem;
+				}
+
+				.hero img {
+					height: 300px;
+				}
+
+				.container {
+					padding: 20px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
+			Imagens: usadas para estudos e layout. As imagens abaixo vêm de sites open-to-use (ex.: Unsplash).
+			
+			Informações/textos: são conteúdos fictícios apenas para demonstração e uso educacional.
+		-->
+
+		<header>
+			<div class="logo">NEWS TODAY</div>
+			<div class="subtitle">Tecnologia • Ciência • Educação • Inovação</div>
+
+			<nav>
+				<a href="#">Início</a>
+				<a href="#">Tecnologia</a>
+				<a href="#">Ciência</a>
+				<a href="#">Educação</a>
+				<a href="#">Negócios</a>
+			</nav>
+		</header>
+
+		<section class="hero">
+			<img
+				src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80"
+				alt="IA"
+			/>
+
+			<div class="hero-content">
+				<span class="badge">TECNOLOGIA</span>
+				<h1>Inteligência Artificial está transformando a forma como estudamos e trabalhamos</h1>
+
+				<p>
+					Ferramentas baseadas em inteligência artificial estão se tornando cada vez mais presentes
+					no cotidiano. Empresas utilizam algoritmos para otimizar processos, enquanto estudantes
+					aproveitam novas tecnologias para aprender de forma mais eficiente. Especialistas acreditam
+					que os próximos anos serão marcados por uma integração ainda maior entre humanos e sistemas
+					inteligentes.
+				</p>
+			</div>
+		</section>
+
+		<div class="container">
+			<h2 class="section-title">Destaques do Dia</h2>
+
+			<div class="news-grid">
+				<article class="card">
+					<img
+						src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+						alt="Estudantes"
+					/>
+
+					<div class="card-content">
+						<h3>Projeto estudantil ganha destaque nacional</h3>
+
+						<p>
+							Um grupo de estudantes desenvolveu uma plataforma colaborativa que conecta voluntários a
+							projetos sociais. A iniciativa começou como um trabalho acadêmico e hoje já desperta
+							interesse de diversas instituições.
+						</p>
+					</div>
+				</article>
+
+				<article class="card">
+					<img
+						src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+						alt="Programação"
+					/>
+
+					<div class="card-content">
+						<h3>Mercado de tecnologia segue em expansão</h3>
+
+						<p>
+							A demanda por profissionais de desenvolvimento continua crescendo. Linguagens como Java,
+							JavaScript e Python seguem entre as mais procuradas por empresas de diversos segmentos.
+						</p>
+					</div>
+				</article>
+
+				<article class="card">
+					<img
+						src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+						alt="Espaço"
+					/>
+
+					<div class="card-content">
+						<h3>Novas descobertas ampliam pesquisas espaciais</h3>
+
+						<p>
+							Cientistas divulgaram resultados promissores em estudos relacionados à observação de
+							galáxias distantes. As informações ajudam a compreender melhor a origem e evolução do
+							universo.
+						</p>
+					</div>
+				</article>
+			</div>
+
+			<div class="latest">
+				<h2 class="section-title">Últimas Notícias</h2>
+
+				<ul>
+					<li>🚀 Startup brasileira anuncia investimento em soluções de IA para educação.</li>
+					<li>💻 Empresas ampliam programas de estágio voltados para tecnologia.</li>
+					<li>📱 Novo aplicativo promete facilitar a organização de estudos.</li>
+					<li>🌎 Pesquisadores apresentam projeto para monitoramento ambiental em tempo real.</li>
+					<li>🎓 Universidades registram aumento na procura por cursos de programação.</li>
+				</ul>
+			</div>
+		</div>
+
+		<footer>
+			<h3>NEWS TODAY</h3>
+			<p>© 2026 News Today - Todos os direitos reservados.</p>
+			<p>Desenvolvido por Nícolas Mussi</p>
+		</footer>
+	</body>
+</html>
+
