@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left,#2563eb,#0f172a 40%),
+    radial-gradient(circle at bottom right,#7c3aed,#0f172a 40%);
+    color:white;
+}
+
+.container{
+    width:450px;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.logo{
+    text-align:center;
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+h1{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+input::placeholder{
+    color:#cbd5e1;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.resultado{
+    width:500px;
+    text-align:center;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.icone{
+    font-size:90px;
+    margin-bottom:15px;
+}
+
+.liberado{
+    border-top:8px solid #22c55e;
+}
+
+.negado{
+    border-top:8px solid #ef4444;
+}
+
+.naoencontrado{
+    border-top:8px solid #f59e0b;
+}
+
+.nome{
+    margin-top:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.status{
+    margin-top:10px;
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+.voltar{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,.15);
+    transition:.3s;
+}
+
+.voltar:hover{
+    background:rgba(255,255,255,.25);
+}
