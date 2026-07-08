@@ -13,16 +13,47 @@ Este repositório reúne exemplos e projetos desenvolvidos com:
 - **`/hotpost`**: é uma pasta organizada por nome do projeto com sites simples e sem uma lógica complexa.
 - **`/with-database`**: é uma pasta organizada por nome do projeto com sites mais complexos e que usaram banco de dados.
 
+## Como rodar
 
-## Como usar
-1. Abra arquivos **`.html`**, **`.css`** e **`.js`** diretamente no navegador.
-2. Para arquivos **`.php`** (ex.: `index.php`, `cart.php`, `processa.php`):
-  - execute em um servidor local com PHP habilitado (ex.: XAMPP/WAMP), pois dependem do backend.
+### 1. Banco de Dados (HeidiSQL)
+Para utilizar o banco de dados do projeto, é necessário ter um servidor MySQL ou MariaDB configurado.
+- **HeidiSQL** (é o que está sendo utilizado atualmente)
 
-### Como usar o Banco de Dados (HeidiSQL)
+Passos:
 1. Abra o **HeidiSQL** e conecte no seu servidor MySQL/MariaDB (geralmente `localhost`, usuário `root`).
 2. Vá em **Arquivo > Executar script SQL...** (ou "Load SQL file").
 3. Selecione o arquivo `.sql` e execute.
+4. Isso criará o banco com as tabelas já com alguns dados de exemplo.
+
+### 2. Servidor PHP
+Você precisa de um ambiente com PHP e MySQL, por exemplo:
+- **XAMPP** / **WAMP** / **Laragon** (mais comuns no Windows)
+
+Passos:
+1. Copie a pasta para dentro de `htdocs` (XAMPP) ou `www` (Laragon/WAMP).
+2. Abra o arquivo `config.php` e confira/ajuste os dados de acesso:
+   ```php
+   $host    = 'localhost';
+   $dbname  = 'nome_db';
+   $usuario = 'root';
+   $senha   = ''; // senha do seu MySQL, se houver
+   ```
+3. Inicie o Apache e o MySQL no painel do XAMPP/Laragon.
+4. Acesse no navegador: `http://localhost/`
+
+### 3. Arquivos HTML, CSS e JS
+Não é necessário instalar PHP, MySQL ou qualquer servidor específico.
+
+Passos:
+1. Baixe ou extraia a pasta do projeto.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
+3. Caso utilize o VS Code, recomenda-se instalar a extensão **Live Server**.
+4. Clique com o botão direito em `index.html` e selecione **Open with Live Server**.
+5. O projeto será aberto automaticamente no navegador.
+
+Acesso:
+- Diretamente pelo arquivo: `index.html`
+- Com Live Server: `http://localhost:5500/`
 
 
 ## Tecnologias (resumo)
