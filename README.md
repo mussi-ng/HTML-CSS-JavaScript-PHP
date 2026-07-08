@@ -13,10 +13,17 @@ Este repositório reúne exemplos e projetos desenvolvidos com:
 - **`/hotpost`**: é uma pasta organizada por nome do projeto com sites simples e sem uma lógica complexa.
 - **`/with-database`**: é uma pasta organizada por nome do projeto com sites mais complexos e que usaram banco de dados.
 
+
 ## Como usar
 1. Abra arquivos **`.html`**, **`.css`** e **`.js`** diretamente no navegador.
 2. Para arquivos **`.php`** (ex.: `index.php`, `cart.php`, `processa.php`):
   - execute em um servidor local com PHP habilitado (ex.: XAMPP/WAMP), pois dependem do backend.
+
+### Como usar o Banco de Dados (HeidiSQL)
+1. Abra o **HeidiSQL** e conecte no seu servidor MySQL/MariaDB (geralmente `localhost`, usuário `root`).
+2. Vá em **Arquivo > Executar script SQL...** (ou "Load SQL file").
+3. Selecione o arquivo `.sql` e execute.
+
 
 ## Tecnologias (resumo)
 ### HTML
